@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 2500,
+      "categoryId": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "price": 250,
+      "categoryId": 2,
+      "description": "A4 Tech",
+      "imageUrl": "https://cdn.akakce.com/a4-tech/a4-tech-g10-810-f-optik-wireless-z.jpg"
+    },
+    {
+      "name": "Telefon",
+      "description": "Iphone 8",
+      "price": "7500",
+      "categoryId": "2",
+      "imageUrl": "https://images.hepsiburada.net/assets/Telefon/ProductDesc/iphone8-a%C3%A7%C4%B1klama-yeni.jpg",
+      "id": 3
+    },
+    {
+      "categoryId": "3",
+      "name": "Ütü",
+      "description": "Buharlı Ütü",
+      "imageUrl": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/tefal/thumb/TeoriV2-105163_large.jpg",
+      "price": "375",
+      "id": 4
+    }
+  ]
+  
+}

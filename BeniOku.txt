@@ -1,0 +1,22 @@
+Selamlar , db.json dosyasında ürün listem bulunuyor.Cmd de 
+" json-server --watch db.json " komutuyla http://localhost:3000 üzerinde ayağa kalkıyor.
+Aksi halde Alışveriş ekranı boş görünecektir.
+Girilen veriler localstorage da tutuluyor tarayının kapatılması halinde ,
+ gizli sekmeden giriş yapmanız rica ederim.
+
+
+
+***********************************************************
+Merhaba,
+
+Örnek olarak bir ekran tasarladığımızı düşünelim ve ekranda kullanıcının bir cüzdanı bulunacak ve bu cüzdana
+istenilen tutar eklenebilecek.
+Sonrasında ürün adı ve ücreti olan liste bulunacak ve burada eklenen ürünler sepet mantığı ile listelenecek.
+Sepet e atılan bu ürünler eger cüzdan da ki bakiye yeterliyse altında ki satın al butonu aktif olacak,
+yeterli bakiye bulunmaması halinde bunun için bir uyarı olacak ve satın al butonu aktif olmayacak.
+
+Proje ile alakalı olarak zorunlu olmamakla birlikte react.js, typescript, tailwind kullanımı ayrıca değerlendirilecektir.
+Öncelikli olmamakla beraber ekte verilen görselde ki plan temel alınarak tasarımın yapılması ve bu konuda uygun bir tasarım
+ortaya konması ayrıca bir değerlendirme ölçütü sayılacaktır.
+
+

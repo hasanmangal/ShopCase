@@ -1,0 +1,15 @@
+<div class="row">
+    <div
+        *ngFor="let a of products"
+        class="card"
+        class="productbox"
+        style="width: 18rem"
+      >
+        <img [src]="a.imageUrl" class="card-img-top" style="width: 70%;" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ a.name }} {{ a.price }}₺</h5>
+          <p class="card-text">{{ a.description }}</p>
+          <a (click)="addToCard(a)" class="btn btn-primary">Sepete Ekle</a>
+        </div>
+      </div>
+  </div>

@@ -1,0 +1,159 @@
+<!-- <h3>Aşağıda ki bilgileri eksiksiz doldurunuz</h3>
+<form #cardForm="ngForm" (ngSubmit)="add(cardForm)">
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Kart Adı"
+      #name="ngModel"
+      [(ngModel)]="account.name"
+      [ngModelOptions]="{standalone: true}"
+      class="form-control"
+      required
+    />
+    <div *ngIf="name.invalid && name.dirty " class="alert alert-danger">
+      Kart İsmi Gereklidir
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Kart Numarası"
+      #number="ngModel"
+      [(ngModel)]="account.number"
+      [ngModelOptions]="{standalone: true}"
+      class="form-control"
+      required
+    />
+    <div *ngIf="number.touched" class="alert alert-danger">
+      Kart Numarası Gereklidir
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Kart CVV"
+      #cvv="ngModel"
+      [(ngModel)]="account.cvv"
+      [ngModelOptions]="{standalone: true}"
+      class="form-control"
+      required
+    />
+    <div *ngIf="cvv.invalid && cvv.dirty " class="alert alert-danger">
+      Kart Cvv Gereklidir
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      placeholder="Yüklemek istediğiniz ₺"
+      #balance="ngModel"
+      [(ngModel)]="account.balance"
+      [ngModelOptions]="{standalone: true}"
+      class="form-control"
+      required
+    />
+    <div *ngIf="balance.invalid && balance.dirty " class="alert alert-danger">
+      Yüklemek İstediğiniz Bakiye Zorunludur
+    </div>
+  </div>
+ 
+  <button type="submit" class="btn btn-primary" style="padding-top: 10px; margin-top: 15px" [disabled]="cardForm.invalid" routerLink="/basket" >Parayı Cüzdanıma At</button>
+
+</form>
+
+
+ -->
+
+ <div class="col-md-6 offset-md-3" >
+  <span class="anchor" id="formPayment"></span>
+  <hr class="my-5">
+
+  <!-- form card cc payment -->
+  <div class="card card-outline-secondary">
+      <div class="card-body">
+          <h3 class="text-center">Cüzdana Para Aktar</h3>
+          <hr>
+          
+          <form class="form" role="form" autocomplete="off" #cardForm="ngForm" (ngSubmit)="add(cardForm)">
+              <div class="form-group">
+                  <label for="cc_name">Kartına İsim Ver</label>
+                  <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="First and last name" #name="ngModel"
+                  [(ngModel)]="account.name"
+                  [ngModelOptions]="{standalone: true}"
+                  class="form-control"
+                  required="required">
+                  <div *ngIf="name.invalid && name.dirty " class="alert alert-info">
+                    Kart İsmi Gereklidir
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label>Kart Numarası</label>
+                  <input type="text" class="form-control" autocomplete="off" maxlength="20" pattern="\d{16}" title="Credit card number" required="required"  #number="ngModel"
+                  [(ngModel)]="account.number"
+                  [ngModelOptions]="{standalone: true}">
+                  <div *ngIf="name.invalid && name.dirty " class="alert alert-info">
+                    Kart Numarası Gereklidir
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-md-12">Son Kullanım Tarihi</label>
+                  <div class="col-md-4">
+                      <select class="form-control" name="cc_exp_mo" size="0" >
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                      </select>
+                  </div>
+                  <div class="col-md-4">
+                      <select class="form-control" name="cc_exp_yr" size="0">
+                          <option>2018</option>
+                          <option>2019</option>
+                          <option>2020</option>
+                          <option>2021</option>
+                          <option>2022</option>
+                      </select>
+                  </div>
+                  <div class="col-md-4">
+                      <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="" placeholder="CVC"  #cvv="ngModel"
+                      [(ngModel)]="account.cvv"
+                      [ngModelOptions]="{standalone: true}">
+                      <div *ngIf="cvv.invalid && cvv.dirty " class="alert alert-danger">
+                        Kart Cvv Gereklidir
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <label class="col-md-12" >Miktar</label>
+              </div>
+              <div class="form-inline">
+                  <div class="input-group">
+                      <div class="input-group-prepend"><span class="input-group-text">₺</span></div>
+                      <input type="text" class="form-control text-right" id="exampleInputAmount" placeholder="100"   #balance="ngModel"
+                      [(ngModel)]="account.balance"
+                      [ngModelOptions]="{standalone: true}">
+                      <div class="input-group-append"><span class="input-group-text">.00</span></div>
+                  </div>
+              </div>
+              <hr>
+              <div class="form-group row">
+                  <div class="col-md-6">
+                      <button type="reset" class="btn btn-default btn-lg btn-block">İptal</button>
+                  </div>
+                  <div class="col-md-6">
+                      <button type="submit" class="btn btn-success btn-lg btn-block">Onayla</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+ 
+

@@ -1,0 +1,99 @@
+ <!-- Bu kısım case görselini yansıtmaktadır -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="border">
+      <div class="area">
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="cuzdan"><p>Cüzdan:</p></h4>
+          </div>
+          <div class="col-md-4">
+            <h2 class="money"><p style="font-size: 20px; margin-top: 20px;">{{account.balance}} ₺</p></h2>
+          </div>
+          <div class="col-md-4">
+            <button class="button" routerLink="/card">
+              <b><p>Para Ekle</p></b>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 5%">
+        <div class="col-md-6"><h2>Ürünler</h2></div>
+        <div class="col md-2"></div>
+        <div class="col-md-4">
+          <button class="button-2" routerLink="/basket">
+            <b>Ürün Ekle</b>
+          </button>
+        </div>
+      </div>
+      <div class="area">
+        <div></div>
+        <div class="row">
+
+         
+          <div class="col-md-4">
+            <h6>Ürün Adı</h6>
+            <input style="width: 100%" type="text" />
+          </div>
+
+          <div class="col-md-4">
+            <h6>Tutar</h6>
+
+            <input style="width: 100%" type="text" />
+          </div>
+          <div class="col-md-3">
+            <button class="button" style="width: 100%" routerLink="/basket">
+              <b><p>Ekle</p></b>
+            </button>
+          </div>
+        </div>
+        <div style="margin: 3%">
+          
+          <table BORDER CELLPADDING="10" CELLSPACING="10">
+            <thead>
+              <th style="width: 120px;">Ürün Adı</th>
+              <th style="width: 100px;" >Fiyat</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td><b>{{product.name}}</b></td>
+                <td>
+                  <b>{{product.price}} ₺</b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tutar">
+          <div class="row">
+            <b><h5>Toplam Tutar:</h5></b>
+            <h5 style="margin-left: 3%; color: grey" >{{showTotalPrice()}}  ₺</h5>
+          </div>
+        </div>
+        
+      </div>
+      <div style="padding-top: 5%;">
+        <div>
+
+        </div>
+        <div>
+        <div *ngIf ="showTotalPrice() && account.balance && showTotalPrice() > account.balance"  class="alert alert-danger">
+       <b> İşlem İçin Yeterli Bakiyeniz Bulunmamaktadır.</b>
+        </div>
+        <button (click)="save()" [disabled]="showTotalPrice() && account.balance && showTotalPrice() > account.balance" class="button-3" >
+          <b>Satın Al </b>
+        </button>
+      </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="col-md-6">
+   
+
+    
+  </div>
+</div>

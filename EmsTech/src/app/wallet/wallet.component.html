@@ -1,0 +1,41 @@
+<div class="wallet-container text-center" >
+  <p class="page-title">
+    <i class="fa fa-align-left"></i>EMS TECH<i class="fa fa-user"></i>
+  </p>
+
+  <div class="amount-box text-center">
+    <img
+      src="https://lh3.googleusercontent.com/ohLHGNvMvQjOcmRpL4rjS3YQlcpO0D_80jJpJ-QA7-fQln9p3n7BAnqu3mxQ6kI4Sw"
+      alt="wallet"
+    />
+    <div >
+      <b
+        ><p>Hesap Bakiyesi:</p></b
+      >
+      <p class="amount">{{ card.balance? card.balance:"0" }}₺</p>
+    </div>
+  </div>
+
+  <div class="footer-menu" >
+    <div class="row text-center">
+      <div class="col-md-2">
+        <button *ngIf="card.balance && card.balance!==0" (click)="goToShop()" routerLink="/basket">
+          <i class="fa fa-home"></i>
+          <p>Alışveriş</p>
+        </button>
+      </div>
+
+      <div class="btn-group text-center col-md-10">
+        <button
+          (click)="addToMoney()"
+          class="btn btn-outline-light"
+          routerLink="/card"
+        >
+          Para Ekle
+        </button>
+      </div>
+
+   
+    </div>
+  </div>
+</div>
